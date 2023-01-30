@@ -6,9 +6,9 @@ ser = serial.Serial('/dev/ttyS0',115200)
 logfile = open("esp32-logs.txt", 'a')
 while True:
     try:
-        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
         readedText = ser.readline()
+
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         byte_line = readedText.decode("utf-8")
 
         line_to_save = f"{current_time}:  {byte_line}"
